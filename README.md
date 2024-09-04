@@ -1,3 +1,1 @@
-# My New Repo
-# OcQaConfigs
-# OcQaConfigs
+#THIS IS README FILE
