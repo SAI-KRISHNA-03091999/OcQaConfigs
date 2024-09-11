@@ -1,6 +1,6 @@
 #Use token_text_splitter for openai
 #sentence_text_splitter dont work for openai, use anything else
-splitter: sentence_text_splitter_LC #token_text_splitter 
+splitter: token_text_splitter 
 embedding: openai #opnenai,huggingface, sky,dkubex
 metadata:
   - default
@@ -33,7 +33,9 @@ huggingface:
 
 openai:
   #keep this model, dont remove it
-  model: "text-embedding-ada-002"
+  #this should work ,but there is a bug, so use embedding_model in place of model
+  #model: "text-embedding-ada-002"
+  embedding_model: "text-embedding-ada-002"
   llmkey: ""
 
 # having "" or not doesnt matter it will work both ways in dkubex and sky
