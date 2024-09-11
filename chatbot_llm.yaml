@@ -1,0 +1,20 @@
+image: "dkubex123/llmapp:lamaindex"
+name: "baymax1"
+cpu: 1                              #default= -1
+gpu: 0                              #default= 0 
+memory: 4                           #default= -1
+dockerserver: "DOCKER_SERVER"       #default=DOCKER_SERVER
+dockeruser: "docker123"           #default=DOCKER_USER
+dockerpsw: "Portos@123"        #default=DOCKER_PASSWORD
+publish: "true"                     #default="true"
+env:
+  SECUREAPP_ACCESS_KEY: "allow"
+  #openai in place of llm for openai summ
+  FMQUERY_ARGS: "llm --dataset test1 --config /home/sai-nerlla/OcQaConfigs/"
+port: "3000"                        #default="8080"
+description: "App using config yaml" #default=""
+rewritetarget: "false"
+configsnippet: ""                   #default=""
+ingressprefix: "/kri"
+output: "yaml"
+mount_home: "all"                      # default="none" (all/userhome/none)
