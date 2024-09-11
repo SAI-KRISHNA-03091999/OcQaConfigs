@@ -1,0 +1,56 @@
+#Use token_text_splitter for openai
+#sentence_text_splitter dont work for openai, use anything else
+splitter: sentence_text_splitter_LC #token_text_splitter 
+embedding: openai #opnenai,huggingface, sky,dkubex
+metadata:
+  - default
+reader:
+  - file
+  
+adjacent_chunks: true
+
+sentence_text_splitter:
+  chunk_size: 256
+  chunk_overlap: 0
+
+
+sentence_text_splitter_LC:
+  chunk_size: 256
+  chunk_overlap: 0
+
+
+token_text_splitter:
+  chunk_size: 256
+  chunk_overlap: 0
+
+mlflow:
+  experiment: GI-ingestion-krishna
+
+#This 4 section below tells which embedding is used
+######
+huggingface:
+  model: "BAAI/bge-large-en-v1.5"
+
+openai:
+  #keep this model, dont remove it
+  model: "text-embedding-ada-002"
+  llmkey: ""
+
+# having "" or not doesnt matter it will work both ways in dkubex and sky
+dkubex:
+  embedding_key: 
+  embedding_url: 
+  batch_size: 10
+
+sky:
+  embedding_key: 
+  embedding_url: 
+  batch_size: 10
+
+file:
+  inputs:
+    loader_args:
+      input_dir: /home/sai-neralla/OcQaConfigs/Contracts
+      recursive: true 
+      exclude_hidden: true 
+      raise_on_error: true 
