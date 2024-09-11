@@ -1,6 +1,6 @@
 dataset:  #name of the daatset
 vectorstore: weaviate_vectorstore
-embedding:  dkubex #openai  #dkubex #sky #huggingface  #openai
+embedding:  dkubex #openai  #dkubex #sky #huggingface
 search: vector_search
 synthesizer:
   llm: dkubex
