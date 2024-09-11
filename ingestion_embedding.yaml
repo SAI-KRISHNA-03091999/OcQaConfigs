@@ -24,7 +24,7 @@ token_text_splitter:
   chunk_overlap: 0
 
 mlflow:
-  experiment: GI-ingestion-krishna
+  experiment: Ingestion-Krishna
 
 #This 4 section below tells which embedding is used
 ######
