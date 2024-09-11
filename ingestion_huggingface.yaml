@@ -34,7 +34,7 @@ huggingface:
 openai:
   #keep this model, dont remove it
   model: "text-embedding-ada-002"
-  llmkey: "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"
+  llmkey: ""
 
 # having "" or not doesnt matter it will work both ways in dkubex and sky
 dkubex:
