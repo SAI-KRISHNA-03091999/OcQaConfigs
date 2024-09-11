@@ -1,0 +1,49 @@
+dataset:  #name of the daatset
+vectorstore: weaviate_vectorstore
+embedding:  dkubex #openai  #dkubex #sky #huggingface  #openai
+search: vector_search
+synthesizer:
+  llm: dkubex
+  llm_url: 
+  llmkey: 
+  prompt: default
+  max_tokens: 1024
+
+mlflow:
+  experiment: Rag-Test_Krishna
+
+##Below 4 tells which embedding is used
+openai:
+  model: 'text-embedding-ada-002'
+  llmkey: 
+
+huggingface:
+  model: "BAAI/bge-large-en-v1.5"
+
+sky:
+  embedding_url: 
+  embedding_key: 
+
+dkubex:
+  embedding_url: 
+  embedding_key: 
+
+vector_search:
+  top_k: 3
+  rerank: true
+  rerank_topk: 5
+  max_sources: 3
+
+weaviate_vectorstore:
+  vectorstore_provider: dkubex
+  url: ""
+  auth_key: ""
+  textkey: 'paperdocs'
+
+context_combiner:
+  use_adj_chunks: True #True #False
+  use_fourth_chunks: False  #True #False
+
+securellm:
+  appkey: ""
+  dkubex_url: ""
