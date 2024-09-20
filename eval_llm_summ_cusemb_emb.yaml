@@ -10,9 +10,8 @@ questions_generator:
     llmurl: ""
     max_tokens: 2048
 
-#ground_truth: "/home/ocdlgit/shashank/simple_15pos15neg_ground-truth.csv"
-# ground_truth: "/home/ocdlgit/shashank/simple_gi_nevada_ground-truth.csv"
-# ground_truth: "/home/ocdlgit/shashank/gi_nevada_ground-truth.csv"
+#ground_truth: "/home/data/GIconfigs/ground_truth316.csv"
+
 
 rag_configuration: "/home/sai-neralla/OcQaConfigs/rag_llm_embedding.yaml"
 
