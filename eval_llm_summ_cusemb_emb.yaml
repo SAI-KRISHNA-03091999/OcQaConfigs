@@ -6,7 +6,7 @@ questions_generator:
     num_questions_per_chunk: 1
     max_chunks: 10     # Maximum number of chunks to be used for question generation
     llm: openai
-    llmkey: "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"
+    llmkey: "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"
     llmurl: ""
     max_tokens: 2048
 
