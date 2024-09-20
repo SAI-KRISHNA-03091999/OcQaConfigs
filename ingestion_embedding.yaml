@@ -1,7 +1,7 @@
 #Use token_text_splitter for openai
 #sentence_text_splitter dont work for openai, use anything else
-splitter: sentence_text_splitter_LC #token_text_splitter 
-embedding: dkubex #opnenai,huggingface, sky,dkubex
+splitter: sentence_text_splitter_LC 
+embedding: dkubex #opnenai,huggingface,sky
 metadata:
   - default
 reader:
