@@ -14,7 +14,9 @@ mlflow:
 
 ##Below 4 tells which embedding is used
 openai:
-  model: 'text-embedding-ada-002'
+  #model will work for rag but gives error for eval (with securellm only)
+  #model: ''
+  embedding_model: 'text-embedding-ada-002'
   llmkey: ''
 
 huggingface:
