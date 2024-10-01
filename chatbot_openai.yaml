@@ -10,7 +10,7 @@ publish: "true"                     #default="true"
 env:
   SECUREAPP_ACCESS_KEY: "allow"
   #openai in place of llm for openai summ
-  FMQUERY_ARGS: "openai --dataset test1 --config /home/sai-nerlla/OcQaConfigs/"
+  FMQUERY_ARGS: "openai --dataset test1 --config /home/sai-neralla/OcQaConfigs/"
 port: "3000"                        #default="8080"
 description: "App using config yaml" #default=""
 rewritetarget: "false"
