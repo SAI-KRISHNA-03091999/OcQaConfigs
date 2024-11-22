@@ -1,19 +1,19 @@
-dataset: SSS
+dataset: 
 
 generate_ground_truth: true
+extract_ground_truth: false
+
 questions_generator:
     prompt: "default"
     num_questions_per_chunk: 1
-    max_chunks: 10     # Maximum number of chunks to be used for question generation
+    max_chunks: 5     # Maximum number of chunks to be used for question generation
     llm: openai
-    llmkey: "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"
+    llmkey: ""
     llmurl: ""
     max_tokens: 2048
 
-#ground_truth: "/home/data/GIconfigs/ground_truth316.csv"
-
-
-rag_configuration: "/home/sai-neralla/OcQaConfigs/rag_llm_embedding.yaml"
+ground_truth: ""
+rag_configuration: "/home/data/sai_krishna/OcQaConfigs/rag_llm_embedding.yaml"
 
 vectorstore: weaviate_vectorstore
 weaviate_vectorstore:
@@ -27,8 +27,8 @@ weaviate_vectorstore:
 evaluator:
   - semantic_similarity_evaluator       # Vector Similarity
   - correctness_evaluator               # LLM Similarity
-  - answer_relevancy_evaluator
-  - retrieval_evaluator
+    #- answer_relevancy_evaluator
+    #- retrieval_evaluator
 
 semantic_similarity_evaluator:
     prompt: "default"
@@ -45,6 +45,7 @@ correctness_evaluator:
     llm_url: ""
     llmkey: ""
     max_tokens: 2048
+    output_parser: default_parser
 
 answer_relevancy_evaluator:
     prompt: "default"
@@ -60,7 +61,7 @@ retrieval_evaluator:
         textkey: paperchunks
         embedding_provider: sky
         embedding_url: 
-        embedding_key: 
+        embedding_key:
         similarity_top_k: 3
     metrics:
     - mrr
