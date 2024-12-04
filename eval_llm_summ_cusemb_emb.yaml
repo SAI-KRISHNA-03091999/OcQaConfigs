@@ -1,8 +1,7 @@
-dataset: 
+dataset:
 
 generate_ground_truth: true
 extract_ground_truth: false
-
 questions_generator:
     prompt: "default"
     num_questions_per_chunk: 1
@@ -27,45 +26,47 @@ weaviate_vectorstore:
 evaluator:
   - semantic_similarity_evaluator       # Vector Similarity
   - correctness_evaluator               # LLM Similarity
-    #- answer_relevancy_evaluator
-    #- retrieval_evaluator
+#   - answer_relevancy_evaluator
+  - retrieval_evaluator
 
+#Give embedding model details in this
 semantic_similarity_evaluator:
-    prompt: "default"
-    llm: dkubex #openai#dkubex
-    llm_url: ""
-    llmkey: ""
-    max_tokens: 2048
-    metrics:
-    - similarity_score
+   prompt: "default"               #comment default values bge1.5
+   embedding_provider: dkubex #dkubex #sky
+   embedding_url: 
+   embedding_key:
 
+#Give LLM model details in this
 correctness_evaluator:
     prompt: default
     llm: dkubex  #openai # "dkubex" for dkubex deployments
-    llm_url: ""
-    llmkey: ""
+    llm_url: 
+    llmkey: 
     max_tokens: 2048
     output_parser: default_parser
 
+#Give LLM model details in this
 answer_relevancy_evaluator:
     prompt: "default"
     llm: dkubex #use "dkubex" for dkubex deployments
-    llm_url: ""
-    llmkey: ""
+    llm_url: 
+    llmkey: 
     max_tokens: 2048
 
+#Give embedding model details in this
 retrieval_evaluator:
     weaviate_vectorstore:
         kind: weaviate
         vectorstore_provider: dkubex
         textkey: paperchunks
-        embedding_provider: sky
-        embedding_url: 
-        embedding_key:
         similarity_top_k: 3
+    embedding_provider: dkubex
+    embedding_url: 
+    embedding_key:
     metrics:
     - mrr
     - hit_rate
+    calculate_doc_hit: "false" #true
 
 tracking:
     experiment: Evaluate-tests-Krishna
