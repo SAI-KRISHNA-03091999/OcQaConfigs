@@ -8,7 +8,7 @@ query:
     - dummy
 
 parallel_query:
-  batch_size: 1
+  batch_size: 3
   
 synthesizer:
   llm: dkubex
