@@ -2,6 +2,14 @@ dataset:  #name of the daatset
 vectorstore: weaviate_vectorstore
 embedding:  huggingface #openai  #dkubex #sky #huggingface
 search: vector_search
+
+query:
+  post_processor:
+    - dummy
+
+parallel_query:
+  batch_size: 3
+  
 synthesizer:
   llm: dkubex
   llm_url: 
