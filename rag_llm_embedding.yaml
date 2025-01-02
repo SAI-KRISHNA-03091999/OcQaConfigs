@@ -7,6 +7,9 @@ query:
   post_processor:
     - dummy
 
+dummy:
+  dummy: "/"
+
 parallel_query:
   batch_size: 3
   
