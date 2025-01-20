@@ -3,13 +3,6 @@ vectorstore: weaviate_vectorstore
 embedding:  dkubex #openai  #dkubex #sky #huggingface
 search: vector_search
 
-query:
-  post_processor:
-    - dummy
-
-dummy:
-  dummy: "/"
-
 parallel_query:
   batch_size: 3
   
