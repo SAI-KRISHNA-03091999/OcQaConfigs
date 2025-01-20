@@ -5,9 +5,9 @@ import threading
 import concurrent.futures
 import time
 
-apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoic2FuZGVlcC12YW5nYWxhcHVkaSIsInR5cGUiOiJhcGkiLCJpZCI6Ii9kZXBsb3ltZW50L2xsYW1hbmltczIxLyJ9.jT6rmhA7E-iTVq7ZMrfH4ZI9JDECE0ChNkBHcN51zyw"
-url = "https://aaf8d7f4e04f44d9cae498875aae23e2-96b785381ba7f842.elb.us-east-2.amazonaws.com/skypilot/d3x/sky-serve-controller-1ca862e8-1ca8/30003/v1/"
-model = "meta/llama3-8b-instruct"
+apikey = ""
+url = ""
+model = ""
 
 # Define the messages for the chat model
 messages = [
