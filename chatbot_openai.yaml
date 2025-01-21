@@ -1,4 +1,4 @@
-image: "dkubex123/llmapp:lamaindex"
+image: "dkubex123/llmapp:lamaindex16"
 name: "baymax1"
 cpu: 1                              #default= -1
 gpu: 0                              #default= 0 
@@ -18,3 +18,5 @@ configsnippet: ""                   #default=""
 ingressprefix: "/kri1"
 output: "yaml"
 mount_home: "all"                      # default="none" (all/userhome/none)
+metrics:
+ port: 8877
