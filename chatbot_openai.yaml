@@ -1,4 +1,4 @@
-image: "dkubex123/llmapp:lamaindex16"
+image: "dkubex123/gi-llamaindex-18"
 name: "baymax1"
 cpu: 1                              #default= -1
 gpu: 0                              #default= 0 
