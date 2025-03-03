@@ -1,0 +1,75 @@
+splitter: sentence_text_splitter_LC #token_text_splitter #sentence_text_splitter #token_text_splitter #sentence_text_splitter_LC  #semantic_splitter
+embedding: dkubex  #opnenai,huggingface, sky,dkubex
+metadata:
+  - default
+reader:
+  #- file
+  - markdowndatareader  #reader using multillm (pixtral)
+    #- sharepointreader
+
+adjacent_chunks: true
+
+sentence_text_splitter_LC:
+  chunk_size: "256"
+  chunk_overlap: 0
+
+huggingface:
+  model: "BAAI/bge-large-en-v1.5"
+
+
+dkubex:
+  embedding_url:  
+  embedding_key: 
+  batch_size: 32
+  model_id:
+  #model_id: "BAAI/bge-large-en-v1.5"
+
+mlflow:
+  experiment: Ingestion-MultiLLM
+
+multillm:
+  enabled: true
+  deployment_endpoint:  
+  deployment_token:
+  model_prompt: "\\nAnalyze this document image and provide its content summary:\\n\\nSKIP IF:\\n\\\n  \\    - Table of contents or index pages\\n    - Pages with only navigation elements\\n\\\n  \\    - Lists of personal contacts or providers\\n\\n1. For tables:\\n   - Capture all\\\n  \\ data points\\n   - Preserve column relationships\\n   - Include headers and categories\\n\\\n  \\   - Maintain any monetary values exactly\\n\\n2. For lists:\\n   - Include all items\\n\\\n  \\   - Maintain hierarchical structure\\n   - Preserve numbering/bullet points\\n \\\n  \\  - Keep any benefit amounts or dates\\n\\n3. For forms:\\n   - Capture all field\\\n  \\ labels and sections\\n   - Note any required documentation\\n   - List eligibility\\\n  \\ criteria\\n   - Include deadlines or important dates\\n\\n4. For policy documents:\\n\\\n  \\   - Extract key policy terms\\n   - Note coverage details\\n   - Include important\\\n  \\ disclaimers\\n   - Preserve any legal language\\n\\nFormat:\\n- Use markdown headings\\\n  \\ for sections\\n- Use bullet points for lists\\n- Use tables for tabular data\\n-\\\n  \\ Preserve exact numbers and dates\\n- Omit visual descriptions\\n- Skip table of\\\n  \\ contents pages\\n\\n"
+  parallel_request_count: 3
+  file_types:
+    - "docx"
+    - "doc"
+    - "ppt"
+    - "pptx"
+    - "pdf"
+
+markdowndatareader:
+  inputs:
+    data_args:
+      metadata:
+        doc_source: "dkubex"
+        designation_category: "Consumer"
+      input_dir: "/home/sai-neralla/OcQaConfigs/Contracts"
+      #file types currently only pdf is supported 
+      recursive: true
+
+sharepointreader:
+  inputs:
+    loader_args:
+      client_id: 
+      client_secret: 
+      access_token: 
+      tenant_id: 
+      sharepoint_site: 1convergence.sharepoint.com
+      sharepoint_site_path: Rialtes
+    data_args:
+      multillm:
+        metadata:
+          doc_source: "GI"
+          state_category: "NV"
+          designation_category: "Consumer"
+
+file:
+  inputs:
+    loader_args:
+      input_dir: /home/sai-neralla/OcQaConfigs/maha
+      recursive: true 
+      exclude_hidden: true 
+      raise_on_error: true 
