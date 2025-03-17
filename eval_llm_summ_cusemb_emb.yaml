@@ -70,6 +70,8 @@ retrieval_evaluator:
 
 tracking:
     experiment: Evaluate-tests-Krishna
+    runname: Eval_exicution_
+    description: This description is passed from the eval yaml file in tracking -> description
     
     
 ##This is the command to exicute eval    
